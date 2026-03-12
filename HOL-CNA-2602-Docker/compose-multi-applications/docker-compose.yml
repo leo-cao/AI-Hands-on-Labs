@@ -1,0 +1,29 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_host1
+    ports:
+      - 8081:80
+    volumes:
+      - /data/nginx:/usr/share/nginx/html
+    networks:
+      - host1-network
+
+
+  redis:
+    image: redis:latest
+    container_name: redis_host1
+    ports:
+      - 63790:6379
+    networks:
+      - host1-network
+
+
+networks:
+  host1-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 173.18.0.0/24
+          gateway: 173.18.0.1

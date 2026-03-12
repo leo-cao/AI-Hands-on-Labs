@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_test1
+    ports:
+      - 8080:80
+    volumes:
+      - /data/nginx:/usr/share/nginx/html

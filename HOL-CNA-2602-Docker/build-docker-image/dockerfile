@@ -1,0 +1,14 @@
+# Use an official Debian base image
+FROM debian:bookworm-slim
+
+# Update package lists and install nginx
+RUN apt-get update && apt-get install -y nginx --no-install-recommends && rm -rf /var/lib/apt/lists/*
+
+# Copy local website files into the container's NGINX web root
+COPY html/ /usr/share/nginx/html/
+
+# Expose port 80 (standard HTTP port)
+EXPOSE 80
+
+# Command to run NGINX in the foreground
+CMD ["nginx", "-g", "daemon off;"]

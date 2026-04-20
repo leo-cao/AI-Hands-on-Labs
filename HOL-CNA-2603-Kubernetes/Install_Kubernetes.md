@@ -4,7 +4,7 @@
 
 # 1. Install Ubuntu and Set up Environment
 
-## 1.1 Install Ubuntu 25.10 servers
+## 1.1 Install Ubuntu 26.04 servers
 
 1. Intall ubuntu virtual machine with `OpenSSH` on VMware Fusion or WorkStation with the VM configuration below:
 

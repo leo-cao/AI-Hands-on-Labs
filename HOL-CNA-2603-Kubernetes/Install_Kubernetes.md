@@ -1,4 +1,4 @@
-# Kubernetes DevOps HOL-2604-K8S-Install Hands-On Lab Installation Guide
+# Kubernetes DevOps HOL-2603-K8S-Install Hands-On Lab Installation Guide
 
 > By Leo Cao, Apr. 19, 2026
 

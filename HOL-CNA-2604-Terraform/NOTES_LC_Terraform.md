@@ -80,7 +80,7 @@ b) Run `terraform init`
 terraform init
 ```
 
-![Screenshot 2026-04-25 133021](.\assets\Screenshot 2026-04-25 133021.png)
+
 
 ## 3. Terraform Operations
 
@@ -125,13 +125,10 @@ terraform apply
 
 Type`yes` after verifying Terraform plan.
 
-![Screenshot 2026-04-25 140313](.\assets\Screenshot 2026-04-25 140313.png)
+
 
 Verify whether Terraform created `vpc` and `subnet`.
 
-![Screenshot 2026-04-25 141632](.\assets\Screenshot 2026-04-25 141632.png)
-
-![Screenshot 2026-04-25 141652](.\assets\Screenshot 2026-04-25 141652.png)
 
 b) Create `data` by updating `main.tf` below:
 
@@ -236,17 +233,16 @@ b) Apply Terraform, verify terraform plan and type `yes` to continue.
 terraform apply
 ```
 
-![Screenshot 2026-04-25 145248](.\assets\Screenshot 2026-04-25 145248.png)
+
 
 c) Verify tags on AWS.
 
-![Screenshot 2026-04-25 145428](.\assets\Screenshot 2026-04-25 145428.png)
 
 d) Remove tags in `main.tf`
 
 Remove ` vpc_env = "dev"` in `main.tf`, save and run `terraform apply`, last verify it on AWS.
 
-![Screenshot 2026-04-25 145814](.\assets\Screenshot 2026-04-25 145814.png)
+
 
 e) Remove `data` and `resource` 
 
@@ -262,7 +258,6 @@ e) Remove `data` and `resource`
 terraform destroy -target aws_subnet.dev-subnet-2
 ```
 
-![Screenshot 2026-04-25 150634](.\assets\Screenshot 2026-04-25 150634.png)
 
 
 
@@ -275,5 +270,3 @@ a) Compare Terraform expectations and existing configurations.
 ```Shell
 terraform plan
 ```
-
-![Screenshot 2026-04-25 151357](.\assets\Screenshot 2026-04-25 151357.png)

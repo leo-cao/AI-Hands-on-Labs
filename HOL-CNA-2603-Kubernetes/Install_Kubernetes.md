@@ -1,3 +1,6 @@
+![Kubernetes](https://upload.wikimedia.org/wikipedia/commons/6/67/Kubernetes_logo.svg)
+
+
 # Kubernetes DevOps HOL-2603-K8S-Install Hands-On Lab Installation Guide
 
 > By Leo Cao, Apr. 19, 2026

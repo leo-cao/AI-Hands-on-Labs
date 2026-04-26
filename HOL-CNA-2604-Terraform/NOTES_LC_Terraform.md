@@ -264,9 +264,100 @@ terraform destroy -target aws_subnet.dev-subnet-2
 ## 3.3 Terraform Operations
 
 
-
-a) Compare Terraform expectations and existing configurations.
+### 3.3.1 Compare Terraform expectations and existing configurations.
 
 ```Shell
 terraform plan
+```
+
+![Screenshot 2026-04-25 151357](.\assets\Screenshot 2026-04-25 151357.png)
+
+### 3.3.2 Variables
+
+a) Add `vairables.tf` below:
+
+```Terraform
+# 1. Environment
+variable "environment" {
+    description = "environment name"
+    type        = string
+}
+
+variable "region" {
+    description = "AWS region"
+    type        = string
+}
+
+variable "access_key" {
+    description = "YOUR AWS access key"
+    type        = string
+}
+
+variable "secret_key" {
+    description = "YOUR AWS secrect key"
+    type        = string
+}
+variable "availability_zone" {
+    description = "YOUR AWS availability_zone"
+    type        = string
+}
+```
+
+b) Add variables in `dev.tfvars` and `prod.tfvars`
+
+```Terraform
+# Dev Environment Configurationenvironment
+environment = "developtment"
+region      = "ap-northeast-1"
+access_key  = "REPLACED AS YOURS"
+secret_key  = "REPLACED AS YOURS"
+availability_zone = "ap-northeast-1a"
+```
+
+
+
+c) Replace variables in `main.tf` below:
+
+```terraform
+provider "aws" {
+    region = var.region
+    access_key = var.access_key
+    secret_key = var.secret_key
+}
+
+# Configure the TencentCloud Provider
+provider "tencentcloud" {
+  secret_id  = "my-secret-id"
+  secret_key = "my-secret-key"
+  region     = "ap-guangzhou"
+}
+
+resource "aws_vpc" "dev-vpc" {
+  cidr_block = "10.1.0.0/16"
+  tags ={
+    Name = var.environment
+  }
+}
+
+resource "aws_subnet" "dev-subnet-1" {
+  vpc_id = aws_vpc.dev-vpc.id
+  cidr_block = "10.1.10.0/24"
+  availability_zone = var.availability_zone
+  tags = {
+    Name = "subnet-dev-1"
+  }
+}
+
+data "aws_vpc" "exist_vpc" {
+  default = true
+}
+
+resource "aws_subnet" "dev-subnet-2" {
+  vpc_id = data.aws_vpc.exist_vpc.id
+  cidr_block = "172.31.50.0/24"
+  availability_zone = var.availability_zone
+  tags = {
+    Name = "subnet-default-2"
+  }
+}
 ```

@@ -164,7 +164,7 @@ resource "aws_subnet" "dev-subnet-2" {
 >
 >Add `data.` for reciting data. For example: `vpc_id = data.aws_vpc.exist_vpc.id`
 
-> **⚠️ WRAMING!** 
+> **⚠️ WARNING!** 
 >
 > The new VPC and Subnet cannot be an existing ones, it needs to verify on AWS carefully before create it on Terraform.
 
@@ -250,7 +250,7 @@ e) Remove `data` and `resource`
 
 **Optional 2:** Terraform destroys specific resource.
 
-> **⚠️ WARMING!** 
+> **⚠️ WARNING!** 
 >
 > The destroy command is not a best practice.
 

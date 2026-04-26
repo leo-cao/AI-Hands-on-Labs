@@ -1,3 +1,5 @@
+![Docker](https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg)
+
 # Installing Docker 
 
 > By Leo Cao | Version 1.0 | March 12, 2026

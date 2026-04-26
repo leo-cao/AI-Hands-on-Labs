@@ -1,3 +1,4 @@
+![TensorFlow](https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg)
 # HOL-AI-2601-CNN
 
 For the detailed Pyhon scripts, please check hol-ai-2601-cnn-cats-dogs.ipynb.

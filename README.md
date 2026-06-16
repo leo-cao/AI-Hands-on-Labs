@@ -17,4 +17,9 @@ A guide to install and set up Kubernetes. For the detailed step-by-step please r
 
 ---
 ## HOL-CNA-2604-Terraform
-A guaide to install and set up Terraform. For the detailed step-by-step please refer to [HOL-CNA-2604-Terraform/NOTES_LC_Terraform.md](https://github.com/leo-cao/AI-Hands-on-Labs/blob/main/HOL-CNA-2604-Terraform/NOTES_LC_Terraform.md)
+A guide to install and set up Terraform. For the detailed step-by-step please refer to [HOL-CNA-2604-Terraform/NOTES_LC_Terraform.md](https://github.com/leo-cao/AI-Hands-on-Labs/blob/main/HOL-CNA-2604-Terraform/NOTES_LC_Terraform.md)
+
+---
+## HOL-AI-2605-AGENT
+A prototype of AI Agent.
+https://github.com/leo-cao/AI-Hands-on-Labs/tree/main/HOL-AI-2605-AGENT
